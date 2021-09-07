@@ -1,0 +1,29 @@
+{
+  "name": "vuepress-blog",
+  "version": "1.0.0",
+  "description": "一个极简主义Blog网站",
+  "main": "index.js",
+  "license": "MIT",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
+  },
+  "dependencies": {
+    "@vuepress-yard/vuepress-plugin-window": "^1.0.10",
+    "jquery": "^3.6.0",
+    "vuepress-plugin-cursor-effects": "^1.0.2"
+  },
+  "devDependencies": {
+    "@vuepress-reco/vuepress-plugin-bgm-player": "^1.1.3",
+    "@vuepress/plugin-search": "^1.8.2",
+    "moment": "^2.29.1",
+    "vuepress": "^1.7.1",
+    "vuepress-plugin-code-copy": "^1.0.6",
+    "vuepress-plugin-reading-progress": "^1.0.10",
+    "vuepress-theme-reco": "^1.6.6"
+  }
+}
