@@ -1,6 +1,8 @@
 ---
-title: JAVA开发手册
+title: Java开发手册（华山版）
 date: 2020-05-02
+sidebar: 'auto'
+publish: false
 categories:
  - JAVA
 tags:
@@ -108,9 +110,9 @@ public class ConfusingName {
 
  &ensp;<font color=#099B5D>正例</font>：public class OrderFactory; 
 
-&emsp;&emsp;&emsp;&emsp;&emsp;public class LoginProxy;
+ &emsp;&emsp;&emsp;&emsp;&emsp;public class LoginProxy;
 
-&emsp;&emsp;&emsp;&emsp;&emsp;public class ResourceObserver;
+ &emsp;&emsp;&emsp;&emsp;&emsp;public class ResourceObserver;
 
 15. <font color=#FFC000>【推荐】</font>接口类中的方法和属性不要加任何修饰符号（public  也不要加），保持代码的简洁性，并加上有效的 Javadoc 注释。尽量不要在接口里定义变量，如果一定要定义变量，肯定是与接口方法相关，并且是整个应用的基础常量。
 

@@ -1,14 +1,18 @@
-// 把最后更改时间更改为 中国地区的样式
-const moment = require('moment');
-moment.locale("zh-cn") //显示中国的时间格式
+const themeConfig = require('./config/theme/index')
+const navConfig = require('./config/nav')
+const sidebarConfig = require('./config/sidebar')
+const plugConfig = require('./config/plugins/index')
 
 module.exports = {
 	title: "CcSir",
 	description: "这个杀手不太冷",
-	//dest: './dist',
-	//port: '80',
+	port: '80',
 	theme: "reco",
 	head: [
+		['meta', { 
+			name: 'viewport', 
+			content: 'width=device-width,initial-scale=1,user-scalable=no' 
+		}],
 		['meta', {
 			name: "baidu_union_verify",
 			content: "a0036ccf0b657813fb236f80f376c429"
@@ -44,9 +48,9 @@ module.exports = {
 		},
 		author: "CcSir",
 		authorAvatar: "/images/avatar.svg",
-		nav: require("./nav.js"),
-		sidebar: require("./sidebar.js"),
-		// sidebar: 'auto',//所有页面自动生成侧边栏
+		nav: navConfig,
+		sidebar: sidebarConfig,
+		//sidebar: 'auto',//所有页面自动生成侧边栏
 		subSidebar: 'auto', //在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
 		mode: "dark", // 默认 auto，auto 跟随系统，dark 暗色模式，light 亮色模式
 		modePicker: true, // 默认 true，false 不显示模式调节按钮，true 则显示
@@ -58,22 +62,5 @@ module.exports = {
 		anchor: { permalink: false }, // markdown-it-anchor 的选项
 		toc: { includeLevel: [1, 2] }, // markdown-it-toc 的选项
 	},
-	plugins: {
-		//一键复制代码插件: vuepress-plugin-code-copy
-		'vuepress-plugin-code-copy': true,
-		// 阅读进度条: vuepress-plugin-reading-progress
-		'reading-progress': true,
-		// 最后更改时间插件(内置)+moment 格式化为中国地区的样式
-		'@vuepress/last-updated': {
-			transformer: (timestamp, lang) => {
-				return moment(timestamp).format('LLLL')
-			}
-		},
-		// 点击爆炸的彩带效果
-		'cursor-effects': {
-			size: 3, // size of the particle, default: 2
-			shape: ['circle'], // shape of the particle, default: 'star'
-			zIndex: 999999999 // z-index property of the canvas, default: 999999999
-		},
-	}
+	plugins: plugConfig,
 }
