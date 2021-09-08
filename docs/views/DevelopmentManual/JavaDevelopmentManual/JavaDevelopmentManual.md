@@ -15,55 +15,55 @@ tags:
 
 1. <font color=#C00000>【强制】</font>代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。
 
- &ensp; <font color=#FF4500>反例</font>：\_name /    name / \$name / name\_ / name\$ / name 
+&ensp;<font color=#FF4500>反例</font>：\_name /    name / \$name / name\_ / name\$ / name 
 
 2. <font color=#C00000>【强制】</font>代码中的命名严禁使用拼音与英文混合的方式，更不允许直接使用中文的方式。
 
- &ensp;<font color=#977C00>说明</font>：正确的英文拼写和语法可以让阅读者易于理解，避免歧义。注意，纯拼音命名方式更要避免采用。
+&ensp;<font color=#977C00>说明</font>：正确的英文拼写和语法可以让阅读者易于理解，避免歧义。注意，纯拼音命名方式更要避免采用。
 
- &ensp;<font color=#099B5D>正例</font>：renminbi / alibaba / taobao / youku / hangzhou  等国际通用的名称，可视同英文。
+&ensp;<font color=#099B5D>正例</font>：renminbi / alibaba / taobao / youku / hangzhou  等国际通用的名称，可视同英文。
 
- &ensp;<font color=#FF4500>反例</font>：DaZhePromotion [打折] / getPingfenByName() [评分] / int  某变量 = 3
+&ensp;<font color=#FF4500>反例</font>：DaZhePromotion [打折] / getPingfenByName() [评分] / int  某变量 = 3
 
 3. <font color=#C00000>【强制】</font>类名使用 UpperCamelCase 风格，但以下情形例外：DO / BO / DTO / VO / AO/ PO / UID 等。
 
- &ensp;<font color=#099B5D>正例</font>：JavaServerlessPlatform / UserDO / XmlService / TcpUdpDeal / TaPromotion
+&ensp;<font color=#099B5D>正例</font>：JavaServerlessPlatform / UserDO / XmlService / TcpUdpDeal / TaPromotion
 
- &ensp;<font color=#FF4500>反例</font>：javaserverlessplatform / UserDo / XMLService / TCPUDPDeal / TAPromotion
+&ensp;<font color=#FF4500>反例</font>：javaserverlessplatform / UserDo / XMLService / TCPUDPDeal / TAPromotion
 
 4. <font color=#C00000>【强制】</font>方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格，必须遵从驼峰形式。
 
- &ensp;<font color=#099B5D>正例</font>： localValue / getHttpMessage() / inputUserId
+&ensp;<font color=#099B5D>正例</font>： localValue / getHttpMessage() / inputUserId
 
 5. <font color=#C00000>【强制】</font>常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长。
 
- &ensp;<font color=#099B5D>正例</font>：MAX_STOCK_COUNT / CACHE_EXPIRED_TIME
+&ensp;<font color=#099B5D>正例</font>：MAX_STOCK_COUNT / CACHE_EXPIRED_TIME
 
- &ensp;<font color=#FF4500>反例</font>：MAX_COUNT / EXPIRED_TIME
+&ensp;<font color=#FF4500>反例</font>：MAX_COUNT / EXPIRED_TIME
 
 6. <font color=#C00000>【强制】</font>抽象类命名使用 Abstract 或 Base 开头；异常类命名使用 Exception 结尾；测试类命名以它要测试的类的名称开始，以 Test 结尾。
 
 7. <font color=#C00000>【强制】</font>类型与中括号紧挨相连来表示数组。
 
- &ensp;<font color=#099B5D>正例</font>：定义整形数组 int[] arrayDemo;
+&ensp;<font color=#099B5D>正例</font>：定义整形数组 int[] arrayDemo;
 
- &ensp;<font color=#FF4500>反例</font>：在 main 参数中，使用 String args[]来定义。
+&ensp;<font color=#FF4500>反例</font>：在 main 参数中，使用 String args[]来定义。
 
 8. <font color=#C00000>【强制】</font>POJO 类中布尔类型变量都不要加 is 前缀，否则部分框架解析会引起序列化错误。
 
- &ensp;<font color=#977C00>说明</font>：在本文 MySQL 规约中的建表约定第一条，表达是与否的值采用 is_xxx 的命名方式，所以，需要在&lt;resultMap&gt;设置从 is_xxx 到 xxx 的映射关系。
+&ensp;<font color=#977C00>说明</font>：在本文 MySQL 规约中的建表约定第一条，表达是与否的值采用 is_xxx 的命名方式，所以，需要在&lt;resultMap&gt;设置从 is_xxx 到 xxx 的映射关系。
 
- &ensp;<font color=#FF4500>反例</font>：定义为基本数据类型 Boolean isDeleted 的属性，它的方法也是 isDeleted()，RPC 框架在反向解析的时候，“误以为”对应的属性名称是 deleted，导致属性获取不到，进而抛出异常。
+&ensp;<font color=#FF4500>反例</font>：定义为基本数据类型 Boolean isDeleted 的属性，它的方法也是 isDeleted()，RPC 框架在反向解析的时候，“误以为”对应的属性名称是 deleted，导致属性获取不到，进而抛出异常。
 
 9. <font color=#C00000>【强制】</font>包名统一使用小写，点分隔符之间有且仅有一个自然语义的英语单词。包名统一使用单数形式，但是类名如果有复数含义，类名可以使用复数形式。
 
- &ensp;<font color=#099B5D>正例</font>：应用工具类包名为 com.alibaba.ai.util、类名为 MessageUtils（此规则参考 spring 的框架结构）
+&ensp;<font color=#099B5D>正例</font>：应用工具类包名为 com.alibaba.ai.util、类名为 MessageUtils（此规则参考 spring 的框架结构）
 
 10. <font color=#C00000>【强制】</font>避免在子父类的成员变量之间、或者不同代码块的局部变量之间采用完全相同的命名，使可读性降低。
 
- &ensp;<font color=#977C00>说明</font>：子类、父类成员变量名相同，即使是 public 类型的变量也是能够通过编译，而局部变量在同一方法内的不同代码块中同名也是合法的，但是要避免使用。对于非 setter/getter 的参数名称也要避免与成员变量名称相同。
+&ensp;<font color=#977C00>说明</font>：子类、父类成员变量名相同，即使是 public 类型的变量也是能够通过编译，而局部变量在同一方法内的不同代码块中同名也是合法的，但是要避免使用。对于非 setter/getter 的参数名称也要避免与成员变量名称相同。
 
- &ensp;<font color=#FF4500>反例</font>：
+&ensp;<font color=#FF4500>反例</font>：
 
 ```java
 public class ConfusingName { 
@@ -90,106 +90,106 @@ public class ConfusingName {
 ```
 11. <font color=#C00000>【强制】</font>杜绝完全不规范的缩写，避免望文不知义。
 
- &ensp;<font color=#FF4500>反例</font>：AbstractClass“缩写”命名成 AbsClass；condition“缩写”命名成 condi，此类随意缩写严重降低了代码的可阅读性。
+&ensp;<font color=#FF4500>反例</font>：AbstractClass“缩写”命名成 AbsClass；condition“缩写”命名成 condi，此类随意缩写严重降低了代码的可阅读性。
 
 12. <font color=#FFC000>【推荐】</font>为了达到代码自解释的目标，任何自定义编程元素在命名时，使用尽量完整的单词组合来表达其意。
 
- &ensp;<font color=#099B5D>正例</font>：在 JDK 中，表达原子更新的类名为：AtomicReferenceFieldUpdater。
+&ensp;<font color=#099B5D>正例</font>：在 JDK 中，表达原子更新的类名为：AtomicReferenceFieldUpdater。
 
- &ensp;<font color=#FF4500>反例</font>：int a 的随意命名方式。
+&ensp;<font color=#FF4500>反例</font>：int a 的随意命名方式。
 
 13. <font color=#FFC000>【推荐】</font>在常量与变量的命名时，表示类型的名词放在词尾，以提升辨识度。
 
- &ensp;<font color=#099B5D>正例</font>：startTime / workQueue / nameList / TERMINATED_THREAD_COUNT
+&ensp;<font color=#099B5D>正例</font>：startTime / workQueue / nameList / TERMINATED_THREAD_COUNT
 
- &ensp;<font color=#FF4500>反例</font>：startedAt / QueueOfWork / listName / COUNT_TERMINATED_THREAD
+&ensp;<font color=#FF4500>反例</font>：startedAt / QueueOfWork / listName / COUNT_TERMINATED_THREAD
 
 14. <font color=#FFC000>【推荐】</font>如果模块、接口、类、方法使用了设计模式，在命名时需体现出具体模式。
 
- &ensp;<font color=#977C00>说明</font>：将设计模式体现在名字中，有利于阅读者快速理解架构设计理念。
+&ensp;<font color=#977C00>说明</font>：将设计模式体现在名字中，有利于阅读者快速理解架构设计理念。
 
- &ensp;<font color=#099B5D>正例</font>：public class OrderFactory; 
+&ensp;<font color=#099B5D>正例</font>：public class OrderFactory; 
 
-&emsp;&emsp;&emsp;  public class LoginProxy;
+&emsp;&emsp;&emsp; public class LoginProxy;
 
-&emsp;&emsp;&emsp;  public class ResourceObserver;
+&emsp;&emsp;&emsp; public class ResourceObserver;
 
 15. <font color=#FFC000>【推荐】</font>接口类中的方法和属性不要加任何修饰符号（public  也不要加），保持代码的简洁性，并加上有效的 Javadoc 注释。尽量不要在接口里定义变量，如果一定要定义变量，肯定是与接口方法相关，并且是整个应用的基础常量。
 
- &ensp;<font color=#099B5D>正例</font>：接口方法签名  void commit();
+&ensp;<font color=#099B5D>正例</font>：接口方法签名  void commit();
 
- &ensp;&emsp;&emsp;&emsp;接口基础常量  String COMPANY = "alibaba";
+&ensp;&emsp;&emsp;&emsp;接口基础常量  String COMPANY = "alibaba";
 
- &ensp;<font color=#FF4500>反例</font>：接口方法定义  public abstract void f();
+&ensp;<font color=#FF4500>反例</font>：接口方法定义  public abstract void f();
 
- &ensp;<font color=#977C00>说明</font>：JDK8 中接口允许有默认实现，那么这个 default 方法，是对所有实现类都有价值的默认实现。
+&ensp;<font color=#977C00>说明</font>：JDK8 中接口允许有默认实现，那么这个 default 方法，是对所有实现类都有价值的默认实现。
 
 16. 接口和实现类的命名有两套规则：
 
- &ensp;1）<font color=#C00000>【强制】</font>对于 Service 和 DAO 类，基于 SOA 的理念，暴露出来的服务一定是接口，内部的实现类用Impl 的后缀与接口区别。
+&ensp;1）<font color=#C00000>【强制】</font>对于 Service 和 DAO 类，基于 SOA 的理念，暴露出来的服务一定是接口，内部的实现类用Impl 的后缀与接口区别。
 
- &ensp;<font color=#099B5D>正例</font>：CacheServiceImpl 实现 CacheService 接口。
+&ensp;<font color=#099B5D>正例</font>：CacheServiceImpl 实现 CacheService 接口。
 
- &ensp;2）<font color=#FFC000>【推荐】</font>如果是形容能力的接口名称，取对应的形容词为接口名（通常是–able 的形容词）。
+&ensp;2）<font color=#FFC000>【推荐】</font>如果是形容能力的接口名称，取对应的形容词为接口名（通常是–able 的形容词）。
 
- &ensp;<font color=#099B5D>正例</font>：AbstractTranslator 实现 Translatable 接口。
+&ensp;<font color=#099B5D>正例</font>：AbstractTranslator 实现 Translatable 接口。
 
 17. <font color=#76923C>【参考】</font>枚举类名带上 Enum 后缀，枚举成员名称需要全大写，单词间用下划线隔开。
 
- &ensp;<font color=#977C00>说明</font>：枚举其实就是特殊的类，域成员均为常量，且构造方法被默认强制是私有。
+&ensp;<font color=#977C00>说明</font>：枚举其实就是特殊的类，域成员均为常量，且构造方法被默认强制是私有。
 
- &ensp;<font color=#099B5D>正例</font>：枚举名字为 ProcessStatusEnum 的成员名称：SUCCESS / UNKNOWN_REASON。
+&ensp;<font color=#099B5D>正例</font>：枚举名字为 ProcessStatusEnum 的成员名称：SUCCESS / UNKNOWN_REASON。
 
 18. <font color=#76923C>【参考】</font>各层命名规约：
 
- &ensp;A) Service/DAO 层方法命名规约
+&ensp;A) Service/DAO 层方法命名规约
 
- &ensp; &ensp;1） 获取单个对象的方法用 get 做前缀。
+&ensp;&ensp;1） 获取单个对象的方法用 get 做前缀。
 
- &ensp; &ensp;2） 获取多个对象的方法用 list 做前缀，复数形式结尾如：listObjects。
+&ensp;&ensp;2） 获取多个对象的方法用 list 做前缀，复数形式结尾如：listObjects。
 
- &ensp; &ensp;3） 获取统计值的方法用 count 做前缀。
+&ensp;&ensp;3） 获取统计值的方法用 count 做前缀。
 
- &ensp; &ensp;4） 插入的方法用 save/insert 做前缀。
+&ensp;&ensp;4） 插入的方法用 save/insert 做前缀。
 
- &ensp; &ensp;5） 删除的方法用 remove/delete 做前缀。
+&ensp;&ensp;5） 删除的方法用 remove/delete 做前缀。
 
- &ensp; &ensp;6） 修改的方法用 update 做前缀。
+&ensp;&ensp;6） 修改的方法用 update 做前缀。
 
- &ensp;B) 领域模型命名规约
+&ensp;B) 领域模型命名规约
 
- &ensp; &ensp;1） 数据对象：xxxDO，xxx 即为数据表名。
+&ensp;&ensp;1） 数据对象：xxxDO，xxx 即为数据表名。
 
- &ensp; &ensp;2）数据传输对象：xxxDTO，xxx 为业务领域相关的名称。
+&ensp;&ensp;2）数据传输对象：xxxDTO，xxx 为业务领域相关的名称。
 
- &ensp; &ensp;3）展示对象：xxxVO，xxx 一般为网页名称。
+&ensp;&ensp;3）展示对象：xxxVO，xxx 一般为网页名称。
 
- &ensp; &ensp;4）POJO 是 DO/DTO/BO/VO 的统称，禁止命名成 xxxPOJO。
+&ensp;&ensp;4）POJO 是 DO/DTO/BO/VO 的统称，禁止命名成 xxxPOJO。
 
 ### (二) 常量定义
 1. <font color=#C00000>【强制】</font>不允许任何魔法值（即未经预先定义的常量）直接出现在代码中。
 
- &ensp;<font color=#FF4500>反例</font>：String key = "Id#taobao_" + tradeId; 
+&ensp;<font color=#FF4500>反例</font>：String key = "Id#taobao_" + tradeId; 
 
- &ensp;&emsp;&emsp;&emsp;cache.put(key, value);
+&ensp;&emsp;&emsp;&emsp;cache.put(key, value);
 
- &ensp;&emsp; &emsp;&emsp;//  缓存 get 时，由于在代码复制时，漏掉下划线，导致缓存击穿而出现问题
+&ensp;&emsp; &emsp;&emsp;//  缓存 get 时，由于在代码复制时，漏掉下划线，导致缓存击穿而出现问题
 
 2. <font color=#C00000>【强制】</font>在 long 或者Long 赋值时，数值后使用大写的 L，不能是小写的 l，小写容易跟数字 1 混淆，造成误解。
 
- &ensp;<font color=#977C00>说明</font>：Long a = 2l; 写的是数字的 21，还是Long 型的 2。
+&ensp;<font color=#977C00>说明</font>：Long a = 2l; 写的是数字的 21，还是Long 型的 2。
 
 3. <font color=#FFC000>【推荐】</font>不要使用一个常量类维护所有常量，要按常量功能进行归类，分开维护。
 
- &ensp; <font color=#977C00>说明</font>：大而全的常量类，杂乱无章，使用查找功能才能定位到修改的常量，不利于理解和维护。
+&ensp;<font color=#977C00>说明</font>：大而全的常量类，杂乱无章，使用查找功能才能定位到修改的常量，不利于理解和维护。
 
- &ensp; <font color=#099B5D>正例</font>：缓存相关常量放在类 CacheConsts 下；系统配置相关常量放在类 ConfigConsts 下。
+&ensp;<font color=#099B5D>正例</font>：缓存相关常量放在类 CacheConsts 下；系统配置相关常量放在类 ConfigConsts 下。
 
 4. <font color=#FFC000>【推荐】</font>常量的复用层次有五层：跨应用共享常量、应用内共享常量、子工程内共享常量、包内共享常量、类内共享常量。
 
- &ensp;1） 跨应用共享常量：放置在二方库中，通常是 client.jar 中的 constant 目录下。
+&ensp;1） 跨应用共享常量：放置在二方库中，通常是 client.jar 中的 constant 目录下。
 
- &ensp;2） 应用内共享常量：放置在一方库中，通常是子模块中的 constant 目录下。
+&ensp;2） 应用内共享常量：放置在一方库中，通常是子模块中的 constant 目录下。
 
 &emsp;&emsp;&emsp;<font color=#FF4500>反例</font>：易懂变量也要统一定义成应用内共享常量，两位工程师在两个类中分别定义了“YES”的变量：
 
@@ -199,17 +199,17 @@ public class ConfusingName {
 
 &emsp;&emsp;&emsp;&emsp;A.YES.equals(B.YES)，预期是 true，但实际返回为 false，导致线上问题。
 
- &emsp;3） 子工程内部共享常量：即在当前子工程的 constant 目录下。
+&emsp;3） 子工程内部共享常量：即在当前子工程的 constant 目录下。
 
- &emsp;4） 包内共享常量：即在当前包下单独的 constant 目录下。
+&emsp;4） 包内共享常量：即在当前包下单独的 constant 目录下。
 
- &emsp;5） 类内共享常量：直接在类内部 private static final 定义。
+&emsp;5） 类内共享常量：直接在类内部 private static final 定义。
 
 5. <font color=#FFC000>【推荐】</font>如果变量值仅在一个固定范围内变化用 enum 类型来定义。
 
- &ensp;<font color=#977C00>说明</font>：如果存在名称之外的延伸属性应使用 enum 类型，下面<font color=#099B5D>正例</font>中的数字就是延伸信息，表示一年中的第几个季节。
+&ensp;<font color=#977C00>说明</font>：如果存在名称之外的延伸属性应使用 enum 类型，下面<font color=#099B5D>正例</font>中的数字就是延伸信息，表示一年中的第几个季节。
 
- &ensp;<font color=#099B5D>正例</font>：
+&ensp;<font color=#099B5D>正例</font>：
 
 ```java
 public enum SeasonEnum {
@@ -228,13 +228,13 @@ public enum SeasonEnum {
 
 1. <font color=#C00000>【强制】</font>如果是大括号内为空，则简洁地写成{}即可，大括号中间无需换行和空格；如果是非空代码块则：
 
- &ensp;1） 左大括号前不换行。
+&ensp;1） 左大括号前不换行。
 
- &ensp;2） 左大括号后换行。
+&ensp;2） 左大括号后换行。
 
- &ensp;3） 右大括号前换行。
+&ensp;3） 右大括号前换行。
 
- &ensp;4） 右大括号后还有 else 等代码则不换行；表示终止的右大括号后必须换行。
+&ensp;4） 右大括号后还有 else 等代码则不换行；表示终止的右大括号后必须换行。
 
 2. <font color=#C00000>【强制】</font>左小括号和字符之间不出现空格；同样，右小括号和字符之间也不出现空格；而左大括号前需要空格。详见第 5 条下方<font color=#099B5D>正例</font>提示。
 
@@ -1707,27 +1707,27 @@ SELECT a.* FROM 表 1 a, (select id from 表 1 where 条件 LIMIT 100000,20 ) b 
 
 1. <font color=#FFC000>【推荐】</font>图中默认上层依赖于下层，箭头关系表示可直接依赖，如：开放接口层可以依赖于Web 层，也可以直接依赖于 Service 层，依此类推：
 
-	<img src="../images/JavaDevelopmentManual-001.png" style="zoom:300%;" align="center" />
+<diV align="center"><img src="../images/JavaDevelopmentManual-001.png" style="zoom:100%;" /></div>
 
-	- 开放接口层：可直接封装 Service 方法暴露成 RPC 接口；通过 Web 封装成 http 接口；进行网关安全控制、流量控制等。
-	
-	-  终端显示层：各个端的模板渲染并执行显示的层。当前主要是 velocity 渲染，JS 渲染，JSP 渲染，移动端展示等。
-	
-	- Web 层：主要是对访问控制进行转发，各类基本参数校验，或者不复用的业务简单处理等。
-	
-	-  Service 层：相对具体的业务逻辑服务层。
-	
-	-  Manager 层：通用业务处理层，它有如下特征：
-	
-	1） 对第三方平台封装的层，预处理返回结果及转化异常信息。
-	
-	2） 对 Service 层通用能力的下沉，如缓存方案、中间件通用处理。
-	
-	3） 与 DAO 层交互，对多个 DAO 的组合复用。
-	
-	-  DAO 层：数据访问层，与底层 MySQL、Oracle、Hbase 等进行数据交互。
-	
-	-  外部接口或第三方平台：包括其它部门 RPC 开放接口，基础平台，其它公司的 HTTP 接口。
+  - 开放接口层：可直接封装 Service 方法暴露成 RPC 接口；通过 Web 封装成 http 接口；进行网关安全控制、流量控制等。
+
+  -  终端显示层：各个端的模板渲染并执行显示的层。当前主要是 velocity 渲染，JS 渲染，JSP 渲染，移动端展示等。
+
+  - Web 层：主要是对访问控制进行转发，各类基本参数校验，或者不复用的业务简单处理等。
+
+  -  Service 层：相对具体的业务逻辑服务层。
+
+  -  Manager 层：通用业务处理层，它有如下特征：
+
+  1） 对第三方平台封装的层，预处理返回结果及转化异常信息。
+
+  2） 对 Service 层通用能力的下沉，如缓存方案、中间件通用处理。
+
+  3） 与 DAO 层交互，对多个 DAO 的组合复用。
+
+  -  DAO 层：数据访问层，与底层 MySQL、Oracle、Hbase 等进行数据交互。
+
+  -  外部接口或第三方平台：包括其它部门 RPC 开放接口，基础平台，其它公司的 HTTP 接口。
 
 2. <font color=#76923C>【参考】</font>（分层异常处理规约）在 DAO 层，产生的异常类型有很多，无法用细粒度的异常进行 catch，使用 catch(Exception e)方式，并 throw new DAOException(e)，不需要打印日志，因为日志在 Manager/Service 层一定需要捕获并打印到日志文件中去，如果同台服务器再打日志，浪费性能和存储。在 Service 层出现异常时，必须记录出错日志到磁盘，尽可能带上参数信息，相当于保护案发现场。如果 Manager 层与 Service 同机部署，日志方式与 DAO 层处理一致，如果是单独部署，则采用与 Service 一致的处理方式。Web 层绝不应该继续往上抛异常，因为已经处于顶层，如果意识到这个异常将导致页面无法正常渲染，那么就应该直接跳转到友好错误页面，加上用户容易理解的错误提示信息。开放接口层要将异常处理成错误码和错误信息方式返回。
 
