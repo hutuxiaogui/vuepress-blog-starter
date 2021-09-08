@@ -110,9 +110,9 @@ public class ConfusingName {
 
  &ensp;<font color=#099B5D>正例</font>：public class OrderFactory; 
 
- &emsp;&emsp;&emsp;&emsp;&emsp;public class LoginProxy;
+&emsp;&emsp;&emsp;  public class LoginProxy;
 
- &emsp;&emsp;&emsp;&emsp;&emsp;public class ResourceObserver;
+&emsp;&emsp;&emsp;  public class ResourceObserver;
 
 15. <font color=#FFC000>【推荐】</font>接口类中的方法和属性不要加任何修饰符号（public  也不要加），保持代码的简洁性，并加上有效的 Javadoc 注释。尽量不要在接口里定义变量，如果一定要定义变量，肯定是与接口方法相关，并且是整个应用的基础常量。
 
@@ -199,11 +199,11 @@ public class ConfusingName {
 
 &emsp;&emsp;&emsp;&emsp;A.YES.equals(B.YES)，预期是 true，但实际返回为 false，导致线上问题。
 
- &ensp;&emsp;&emsp;3） 子工程内部共享常量：即在当前子工程的 constant 目录下。
+ &emsp;3） 子工程内部共享常量：即在当前子工程的 constant 目录下。
 
- &ensp;&emsp;&emsp; 4） 包内共享常量：即在当前包下单独的 constant 目录下。
+ &emsp;4） 包内共享常量：即在当前包下单独的 constant 目录下。
 
- &ensp; &emsp;&emsp;5） 类内共享常量：直接在类内部 private static final 定义。
+ &emsp;5） 类内共享常量：直接在类内部 private static final 定义。
 
 5. <font color=#FFC000>【推荐】</font>如果变量值仅在一个固定范围内变化用 enum 类型来定义。
 
@@ -1488,7 +1488,7 @@ appName_logType_logName.log。logType:日志类型，如 stats/monitor/access �
 
 &ensp;&emsp;&emsp;<font color=#099B5D>正例</font>：aliyun_admin，rdc_config，level3_name
 
- &ensp;&emsp;&emsp;<font color=#FF4500>反例</font>：AliyunAdmin，rdcConfig，level_3_name
+&ensp;&emsp;&emsp;<font color=#FF4500>反例</font>：AliyunAdmin，rdcConfig，level_3_name
 
 3. <font color=#C00000>【强制】</font>表名不使用复数名词。
 
@@ -1528,7 +1528,7 @@ appName_logType_logName.log。logType:日志类型，如 stats/monitor/access �
 
 &ensp;3） 不是唯一索引的字段。
 
-&ensp;<font color=#099B5D>正例</font>：商品类目名称使用频率高，字段长度短，名称基本一不变，可在相关联的表中冗余存储类目名称，避免关联查询。
+&ensp;&emsp;&emsp;<font color=#099B5D>正例</font>：商品类目名称使用频率高，字段长度短，名称基本一不变，可在相关联的表中冗余存储类目名称，避免关联查询。
 
 14. <font color=#FFC000>【推荐】</font>单表行数超过 500 万行或者单表容量超过 2GB，才推荐进行分库分表。
 
@@ -1567,7 +1567,7 @@ appName_logType_logName.log。logType:日志类型，如 stats/monitor/access �
 
 &ensp;&emsp;&emsp;<font color=#099B5D>正例</font>：where a=? and b=? order by c; 索引：a_b_c
 
- &ensp;&emsp;&emsp;<font color=#FF4500>反例</font>：索引如果存在范围查询，那么索引有序性无法利用，如：WHERE a>10 ORDER BY b; 索引 a_b 无法排序。
+&ensp;&emsp;&emsp;<font color=#FF4500>反例</font>：索引如果存在范围查询，那么索引有序性无法利用，如：WHERE a>10 ORDER BY b; 索引 a_b 无法排序。
 
 6. <font color=#FFC000>【推荐】</font>利用覆盖索引来进行查询操作，避免回表。
 
@@ -1585,7 +1585,7 @@ appName_logType_logName.log。logType:日志类型，如 stats/monitor/access �
 SELECT a.* FROM 表 1 a, (select id from 表 1 where 条件 LIMIT 100000,20 ) b where a.id=b.id
 ```
 
-8. 【推荐】SQL 性能优化的目标：至少要达到 range 级别，要求是 ref 级别，如果可以是consts 最好。
+8. <font color=#FFC000>【推荐】</font>SQL 性能优化的目标：至少要达到 range 级别，要求是 ref 级别，如果可以是consts 最好。
 
  &ensp;<font color=#977C00>说明</font>：
 
@@ -1595,13 +1595,13 @@ SELECT a.* FROM 表 1 a, (select id from 表 1 where 条件 LIMIT 100000,20 ) b 
 
  &ensp;3） range 对索引进行范围检索。
 
- &ensp; <font color=#FF4500>反例</font>：explain 表的结果，type=index，索引物理文件全扫描，速度非常慢，这个 index 级别比较 range还低，与全表扫描是小巫见大巫。
+&ensp;&emsp;&emsp;<font color=#FF4500>反例</font>：explain 表的结果，type=index，索引物理文件全扫描，速度非常慢，这个 index 级别比较 range还低，与全表扫描是小巫见大巫。
 
 9. <font color=#FFC000>【推荐】</font>建组合索引的时候，区分度最高的在最左边。
 
 &ensp;&emsp;&emsp;<font color=#099B5D>正例</font>：如果 where a=? and b=? ，如果 a 列的几乎接近于唯一值，那么只需要单建 idx_a 索引即可。
 
- &ensp;&emsp;&emsp;<font color=#977C00>说明</font>：存在非等号和等号混合时，在建索引时，请把等号条件的列前置。如：where c>? and d=? 那么即使 c 的区分度更高，也必须把 d 放在索引的最前列，即索引 idx_d_c。
+&ensp;&emsp;&emsp;<font color=#977C00>说明</font>：存在非等号和等号混合时，在建索引时，请把等号条件的列前置。如：where c>? and d=? 那么即使 c 的区分度更高，也必须把 d 放在索引的最前列，即索引 idx_d_c。
 
 10. <font color=#FFC000>【推荐】</font>防止因字段类型不同造成的隐式转换，导致索引失效。
 
@@ -1623,7 +1623,7 @@ SELECT a.* FROM 表 1 a, (select id from 表 1 where 条件 LIMIT 100000,20 ) b 
 
 3. <font color=#C00000>【强制】</font>当某一列的值全是 NULL 时，count(col)的返回结果为 0，但 sum(col)的返回结果为 NULL，因此使用 sum()时需注意 NPE 问题。
 
- &ensp;<font color=#099B5D>正例</font>：使用如下方式来避免 sum 的 NPE 问题：SELECT IFNULL(SUM(column), 0) FROM table;
+&ensp;&emsp;&emsp;<font color=#099B5D>正例</font>：使用如下方式来避免 sum 的 NPE 问题：SELECT IFNULL(SUM(column), 0) FROM table;
 
 4. <font color=#C00000>【强制】</font>使用 ISNULL()来判断是否为 NULL 值。
 
@@ -1707,7 +1707,7 @@ SELECT a.* FROM 表 1 a, (select id from 表 1 where 条件 LIMIT 100000,20 ) b 
 
 1. <font color=#FFC000>【推荐】</font>图中默认上层依赖于下层，箭头关系表示可直接依赖，如：开放接口层可以依赖于Web 层，也可以直接依赖于 Service 层，依此类推：
 
-	![](../images/JavaDevelopmentManual-001.png)
+	<img src="../images/JavaDevelopmentManual-001.png" style="zoom:300%;" align="center" />
 
 	- 开放接口层：可直接封装 Service 方法暴露成 RPC 接口；通过 Web 封装成 http 接口；进行网关安全控制、流量控制等。
 	
@@ -1753,11 +1753,11 @@ SELECT a.* FROM 表 1 a, (select id from 表 1 where 条件 LIMIT 100000,20 ) b 
 
  &ensp;<font color=#977C00>说明</font>：{公司/BU} 例如：alibaba/taobao/tmall/aliexpress 等 BU 一级；子业务线可选。
 
- &ensp;<font color=#099B5D>正例</font>：com.taobao.jstorm 或 com.alibaba.dubbo.register
+&ensp;&emsp;&emsp;<font color=#099B5D>正例</font>：com.taobao.jstorm 或 com.alibaba.dubbo.register
 
  &ensp;2） ArtifactID 格式：产品线名-模块名。语义不重复不遗漏，先到中央仓库去查证一下。
 
- &ensp;<font color=#099B5D>正例</font>：dubbo-client / fastjson-api / jstorm-tool
+&ensp;&emsp;&emsp;<font color=#099B5D>正例</font>：dubbo-client / fastjson-api / jstorm-tool
 
  &ensp;3） Version：详细规定参考下方。
 
@@ -1809,7 +1809,7 @@ SELECT a.* FROM 表 1 a, (select id from 表 1 where 条件 LIMIT 100000,20 ) b 
 
  &ensp;<font color=#977C00>说明</font>：操作系统默认 240 秒后，才会关闭处于 time_wait 状态的连接，在高并发访问下，服务器端会因为处于 time_wait 的连接数太多，可能无法建立新的连接，所以需要在服务器上调小此等待值。
 
- &ensp;<font color=#099B5D>正例</font>：在 linux 服务器上请通过变更/etc/sysctl.conf 文件去修改该缺省值（秒）：net.ipv4.tcp_fin_timeout = 30
+&ensp;&emsp;&emsp;<font color=#099B5D>正例</font>：在 linux 服务器上请通过变更/etc/sysctl.conf 文件去修改该缺省值（秒）：net.ipv4.tcp_fin_timeout = 30
 
 2. <font color=#FFC000>【推荐】</font>调大服务器所支持的最大文件句柄数（File Descriptor，简写为 fd）。
 
@@ -1837,7 +1837,7 @@ SELECT a.* FROM 表 1 a, (select id from 表 1 where 条件 LIMIT 100000,20 ) b 
 
  &ensp;<font color=#977C00>说明</font>：状态图的核心是对象状态，首先明确对象有多少种状态，然后明确两两状态之间是否存在直接转换关系，再明确触发状态转换的条件是什么。
 
- &ensp;<font color=#099B5D>正例</font>：淘宝订单状态有已下单、待付款、已付款、待发货、已发货、已收货等。比如已下单与已收货这两种状态之间是不可能有直接转换关系的。
+&ensp;&emsp;&emsp;<font color=#099B5D>正例</font>：淘宝订单状态有已下单、待付款、已付款、待发货、已发货、已收货等。比如已下单与已收货这两种状态之间是不可能有直接转换关系的。
 
 4. <font color=#C00000>【强制】</font>如果系统中某个功能的调用链路上的涉及对象超过 3 个，使用时序图来表达并且明确各调用环节的输入与输出。
 
@@ -1853,7 +1853,7 @@ SELECT a.* FROM 表 1 a, (select id from 表 1 where 条件 LIMIT 100000,20 ) b 
 
 7. <font color=#FFC000>【推荐】</font>需求分析与系统设计在考虑主干功能的同时，需要充分评估异常流程与业务边界。
 
- &ensp;<font color=#FF4500>反例</font>：用户在淘宝付款过程中，银行扣款成功，发送给用户扣款成功短信，但是支付宝入款时由于断网演练产生异常，淘宝订单页面依然显示未付款，导致用户投诉。
+&ensp;&emsp;&emsp;<font color=#FF4500>反例</font>：用户在淘宝付款过程中，银行扣款成功，发送给用户扣款成功短信，但是支付宝入款时由于断网演练产生异常，淘宝订单页面依然显示未付款，导致用户投诉。
 
 8. <font color=#FFC000>【推荐】</font>类在设计与实现时要符合单一原则。
 
@@ -1879,7 +1879,7 @@ SELECT a.* FROM 表 1 a, (select id from 表 1 where 条件 LIMIT 100000,20 ) b 
 
  &ensp;<font color=#977C00>说明</font>：敏捷开发是快速交付迭代可用的系统，省略多余的设计方案，摒弃传统的审批流程，但核心关键点上的必要设计和文档沉淀是需要的。
 
- &ensp;<font color=#FF4500>反例</font>：某团队为了业务快速发展，敏捷成了产品经理催进度的借口，系统中均是勉强能运行但像面条一样的代码，可维护性和可扩展性极差，一年之后，不得不进行大规模重构，得不偿失。
+&ensp;&emsp;&emsp;<font color=#FF4500>反例</font>：某团队为了业务快速发展，敏捷成了产品经理催进度的借口，系统中均是勉强能运行但像面条一样的代码，可维护性和可扩展性极差，一年之后，不得不进行大规模重构，得不偿失。
 
 14. <font color=#76923C>【参考】</font>系统设计主要目的是明确需求、理顺逻辑、后期维护，次要目的用于指导编码。
 
